@@ -4,8 +4,8 @@ in its most classic form:
   -- Iterate all the way through the sequence, from beginning to end.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Isaac Harper.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -20,7 +20,7 @@ def main():
 def run_test_count_negatives():
     """ Tests the   count_negatives   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  count_negatives  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -82,9 +82,28 @@ def run_test_count_negatives():
     print('       actual:  ', actual)
 
     # TO DO 2 (continued):  Add your 2 ADDITIONAL tests here:
+    # Test 6
+    expected = 2
+    actual = count_negatives((-5, 3, -700, 12))
+    print()
+    print('Test 6 expected:', expected)
+    print('actual:', actual)
+
+    # Test 7
+    expected = 3
+    actual = count_negatives((-1, -2, -3))
+    print()
+    print('Test 7 expected:', expected)
+    print('actual:', actual)
 
 
 def count_negatives(seq):
+    count = 0
+    for k in range(len(seq)):
+        if seq[k] < 0:
+            count = count + 1
+    return count
+
     """
     What comes in:  An sequence of numbers.
     What goes out:  Returns the number of items in the given sequence
@@ -100,7 +119,7 @@ def count_negatives(seq):
       :type seq: (list | tuple) of (int | float)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -108,7 +127,7 @@ def count_negatives(seq):
 def run_test_count_short_ones():
     """ Tests the   count_short_ones   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done: 4. Implement this TEST function.
     #   It TESTS the  count_short_ones  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -182,9 +201,30 @@ def run_test_count_short_ones():
     print('       actual:  ', actual)
 
     # TO DO 4 (continued):  Add your 2 ADDITIONAL test(s) here:
+    # Test 8
+    expected = 2
+    seq = [['I'], ['am'], ['soooooooo'], ['tired']]
+    actual = count_short_ones(seq)
+    print()
+    print('Test 8 expected:', expected)
+    print('actual:', actual)
+
+    # test 9
+    expected = 3
+    seq = [[123], [1234], [12345]]
+    actual = count_short_ones(seq)
+    print()
+    print('Test 9 expected:', expected)
+    print('actual', actual)
 
 
 def count_short_ones(seq_of_lists):
+    count = 0
+    for k in range(len(seq_of_lists)):
+        if len(seq_of_lists[k]) < 3:
+            count = count + 1
+    return count
+
     """
     What comes in:  An sequence of sequences.
     What goes out:  Returns the number of sub-sequences in the given
@@ -205,9 +245,10 @@ def count_short_ones(seq_of_lists):
       :type seq_of_lists: (list | tuple) of (list | tuple | str)
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+
 
 
 def run_test_draw_circles():
@@ -262,6 +303,12 @@ def run_test_draw_circles():
 
 
 def draw_circles(window, points, radius, color):
+    for k in range(len(points)):
+        circle = rg.Circle(points[k], radius)
+        circle.attach_to(window)
+        circle.fill_color = color
+        window.render()
+
     """
     What comes in:
       -- An rg.RoseWindow
@@ -286,7 +333,7 @@ def draw_circles(window, points, radius, color):
       :type color: str
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 
