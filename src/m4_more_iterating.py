@@ -628,7 +628,7 @@ def run_test_sum_first_n():
 
 def sum_first_n(numbers, n):
     total = 0
-    for k in range(len(numbers[n])):
+    for k in range(len(numbers)):
         total = total + numbers[k]
     return total
 
@@ -666,4 +666,6 @@ def sum_first_n(numbers, n):
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
