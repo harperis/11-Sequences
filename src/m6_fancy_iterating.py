@@ -13,8 +13,8 @@ is different from:
   -- LOOKING only at items AT even-numbered indices.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Isaac Harper.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -342,6 +342,10 @@ def run_test_print_items_that_are_odd_integers(sequence1, sequence2, sequence3, 
 # Iterating through the ENTIRE sequence, FORWARDs.
 # ----------------------------------------------------------------------
 def print_all_items_forwards(sequence):
+    for k in range(len(sequence)):
+        if type(sequence[k]) == str or int:
+            print(sequence[k])
+
     """
     Prints the items in the given sequence in the order that
     they appear, that is, forwards.  Prints them one item per line.
@@ -354,7 +358,7 @@ def print_all_items_forwards(sequence):
        Point at (90, 25)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 

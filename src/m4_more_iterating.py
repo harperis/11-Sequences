@@ -33,7 +33,7 @@ def run_test_sum_sequence():
     print('--------------------------------------------------')
 
     # ------------------------------------------------------------------
-    # TODO: 2. READ the COMMENTS and CODE in this function,
+    # Done: 2. READ the COMMENTS and CODE in this function,
     #  asking questions as needed.
     #
     #   When you believe that you understand:
@@ -631,6 +631,7 @@ def sum_first_n(numbers, n):
     for k in range(len(numbers[n])):
         total = total + numbers[k]
     return total
+
     """
     What comes in:
       -- An sequence of numbers.
